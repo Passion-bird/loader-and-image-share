@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image share</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<style>
+    body {
+        font-size: 25px;
+
+    }
+
+    img {
+        padding-right: 80px;
+        margin-top: 100px;
+    }
+
+
+    .fa-linkedin {
+        background: #0979c4;
+        color: white;
+        padding: 10px;
+        font-size: 22px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+
+    }
+
+    .fa-linkedin:hover {
+        background-color: #0d639c;
+        transition: 0.6s;
+        color: rgb(255, 255, 255);
+    }
+
+    .fa-whatsapp {
+        background: #07ad15;
+        color: white;
+        padding: 10px;
+        font-size: 22px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+    }
+
+    .fa-whatsapp:hover {
+        background-color: #12811b;
+        transition: 0.6s;
+        color: rgb(255, 255, 255);
+    }
+
+
+    .fa-facebook {
+        background: #4bbce9;
+        color: white;
+        padding: 10px;
+        font-size: 22px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+    }
+
+    .fa-facebook:hover {
+        background-color: #2c8eb4;
+        transition: 0.6s;
+        color: rgb(255, 255, 255);
+    }
+
+    .footer-icons {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .image {
+        border: none;
+        background-color: transparent;
+        margin-top: 10px;
+    }
+
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
+
+
+    a:hover {
+        text-decoration: none;
+    }
+    
+    .fa-facebook-f{
+        background-color: #4bbce9;
+        padding: 12px 18px;
+        font-size: 20px;
+ 
+    }
+</style>
+
+
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-lg-4">
+                <img src="https://www.iamgreenwise.com/wp-content/uploads/child-happy-nature-autumn-leaves-900x563.jpg"
+                    height="291" width="440px" alt="fikle">
+
+                <div class="footer-icons">
+                    <button class="image"
+                        src="https://www.iamgreenwise.com/wp-content/uploads/child-happy-nature-autumn-leaves-900x563.jpg"  type="button" id='my_image' onclick="image1_click(this)">share
+                        <i class="fa fa-facebook-f" style="color:white"></i></button></button>
+
+                  
+                </div>
+            </div>
+
+        
+            <div class="col-sm-12 col-lg-4">
+                <img src="https://media.istockphoto.com/photos/multiethnic-group-of-preschool-students-in-class-picture-id1166892018?k=20&m=1166892018&s=612x612&w=0&h=IPblvimEzdw8B4r30D4elnW2Dx5ewuyueyxXWaLnhao="
+                    height="291" width="440px" alt="">
+                <div class="footer-icons">
+                    <button class="image"
+                        src="https://media.istockphoto.com/photos/multiethnic-group-of-preschool-students-in-class-picture-id1166892018?k=20&m=1166892018&s=612x612&w=0&h=IPblvimEzdw8B4r30D4elnW2Dx5ewuyueyxXWaLnhao="><span
+                            class="material-symbols-outlined"><span class="material-symbols-outlined">
+                                content_copy
+                            </span></button>
+
+                    <a type="button" id='my_image' onclick="image1_click(this)" href="#" class="fa fa-facebook"></a>
+                    <a type="button" id='my_image' onclick="image2_click(this)" href="#" class="fa fa-linkedin"></a>
+                    <a type="button" id='my_image' onclick="image3_click(this)" href="#" class="fa fa-whatsapp"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- copy page url
+            <input type="button" value="Copy page url" onclick="Copy();" />
+            <script>
+                function Copy() {
+                    var Url = document.getElementById("url");
+                    Url.innerHTML = window.location.href;
+                    console.log(Url.innerHTML)
+                    Url.select();
+                    document.execCommand("copy");
+                }
+            </script>-->
+
+    <script>
+        $('.image').click(function () {
+            // Create an auxiliary hidden input
+            var aux = document.createElement("input");
+
+            // Get the text from the element passed into the input
+            aux.setAttribute("value", $(this).attr('src'));
+
+            // Append the aux input to the body
+            document.body.appendChild(aux);
+
+            // Highlight the content
+            aux.select();
+
+            // Execute the copy command
+            document.execCommand("copy");
+
+            // Remove the input from the body
+            document.body.removeChild(aux);
+            alert($(this).attr('src'));
+        });
+    </script>
+
+    <script>
+        function image1_click(TheImg) {
+            u = TheImg.src;
+            // t=document.title;
+            t = TheImg.getAttribute('alt');
+            window.open('https://www.facebook.com/' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false;
+        }
+
+        function image2_click(TheImg) {
+            u = TheImg.src;
+            // t=document.title;
+            t = TheImg.getAttribute('alt');
+            window.open('https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiDpq2o7Or4AhXBRCsKHfUMDwIYABAAGgJzZg&ohost=www.google.com&cid=CAESauD2VglqC8_IoLVzVAPwg_l2wGy66_UWfNgEsZl2UNedCSFc-nMkv-L9rwZGMjItfN1TehqO6xwCH3JWYTFzbzL5sqdLbNyIURHbsflJiLfsELbl1tLoo2kpHY5qT4HdVl0ROP8b3kE0564&sig=AOD64_03lgtCm9jkjeks3Z0jsZ_Nrxr0Cg&q&adurl&ved=2ahUKEwifqaao7Or4AhXu8HMBHWzRDqIQ0Qx6BAgCEAE' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false;
+        }
+
+
+        function image3_click(TheImg) {
+            u = TheImg.src;
+            // t=document.title;
+            t = TheImg.getAttribute('alt');
+            window.open('https://wa.me/15551234567' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0,status=0,width=626,height=436'); return false;
+        }
+    </script>
+
+
+
+    <!--
+    <input type="text" value="Hello world" id="myInput">
+    <button onclick="Hello()">Copy Text</button>
+
+    <script>
+    function Hello() {
+    var copyText = document.getElementById('myInput')
+    copyText.select();
+    document.execCommand('copy')
+    console.log('Copied Text')
+    }
+    </script>
+
+    
+        addtoanyplugin
+        <script>
+            var a2a_config = a2a_config || {};
+            a2a_config.overlays = a2a_config.overlays || [];
+            a2a_config.overlays.push({
+                services: ['linkedin', 'whatsapp', 'copy_link'],
+                size: '50',
+                style: 'horizontal',
+                position: 'bottom center',
+            });
+
+            /*a2a_config.overlays.push({ https://i0.wp.com/www.wordzz.com/wp-content/uploads/2017/04/school-kids-1920x1277-image-1024x681.jpg?resize=1024%2C681&ssl=1
+                useImage: true,
+            });*/
+
+            /*  a2a_config.overlays.push({
+                html: '<div class="a2a_kit a2a_kit_size_50 a2a_overlay_style a2a_vertical_style" data-a2a-icon-color="seashell,midnightblue"><a class="a2a_button_pinterest"></a><a class="a2a_button_facebook"></a></div>',
+            });*/
+
+            /* a2a_config.overlays.push({
+                target: 'img.share-image',
+            });*/
+        </script>
+
+        <script async="" src="https://static.addtoany.com/menu/page.js"></script>
+
+
+    -->
+</body>
+
+</html>

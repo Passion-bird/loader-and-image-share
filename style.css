@@ -1,0 +1,27 @@
+.error {
+    width:500px;
+    position: relative;
+    left:30%;
+    background-attachment: fixed;
+    background: fixed;
+
+}
+
+.error-button {
+    position: absolute;
+    top:80%;
+    left:45%;
+    position: fixed;
+}
+.btn{
+background:linear-gradient(140deg, #f30c80 30%,#9c03c2 );
+outline: transparent;
+border:none;
+border-width: 0;
+
+}
+
+    .btn:active, .btn:focus, .btn:active:focus, .btn.active:focus {
+        outline: none !important;
+        border: none;
+    }
